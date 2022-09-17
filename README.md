@@ -2,7 +2,7 @@
 
 In my setup Jellyfin will run as a docker container on a raspberry Pi 4 2GB. The media will be on an external USB, so I want this USB to be automounted everytime the pi is restarted.
 
-## jellyfin setup
+## USB setup
 
 Review usb is present
 
@@ -57,3 +57,7 @@ UUID=6251-D213 /mnt/jellyfinMedia/ exfat defaults,auto,users,rw,nofail 0 0
 ```
 
 [Guide use to automount usb](https://www.shellhacks.com/raspberry-pi-mount-usb-drive-automatically/)
+
+## Docker config
+
+[Instructions to install jellyfin on docker](https://jellyfin.org/docs/general/administration/installing.html#docker)
