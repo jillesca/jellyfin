@@ -4,8 +4,7 @@
 
 Review usb is present
 
-```bash
-
+```bash{1,10}
 pi@raspberrypi:~$ lsblk -fp
 NAME             FSTYPE LABEL    UUID                                 FSAVAIL FSUSE% MOUNTPOINT
 /dev/sda
@@ -22,7 +21,6 @@ pi@raspberrypi:~$ cd /mnt/jellyfinMedia/
 pi@raspberrypi:/mnt/jellyfinMedia$ ll
 total 8,3G
 -rwxr-xr-x 1 root 8,3G abr  3 16:49 1080p.BluRay.x264.mkv*
-
 ```
 
 Auto mount usb
