@@ -1,5 +1,7 @@
 # jellyfin
 
+In my setup Jellyfin will run as a docker container on a raspberry Pi 4 2GB. The media will be on an external USB, so I want this USB to be automounted everytime the pi is restarted.
+
 ## jellyfin setup
 
 Review usb is present
@@ -15,6 +17,7 @@ NAME             FSTYPE LABEL    UUID                                 FSAVAIL FS
 ├─/dev/mmcblk0p5 ext4   SETTINGS 8f1c81ed-b0b2-4c82-920a-c814e6c2ae7b
 ├─/dev/mmcblk0p6 vfat   boot     024C-430B                             203,9M    19% /boot
 └─/dev/mmcblk0p7 ext4   root     c06fca97-5d2b-41b6-9971-fc45bf639373   15,6G    34% /
+
 pi@raspberrypi:~$ sudo mkdir /mnt/jellyfinMedia
 pi@raspberrypi:~$ sudo mount -t exfat /dev/sda1 /mnt/jellyfinMedia
 pi@raspberrypi:~$ cd /mnt/jellyfinMedia/
@@ -33,6 +36,7 @@ pi@raspberrypi:/mnt/jellyfinMedia$ sudo blkid
 /dev/mmcblk0p7: LABEL="root" UUID="c06fca97-5d2b-41b6-9971-fc45bf639373" TYPE="ext4" PARTUUID="0004283f-07"
 /dev/mmcblk0: PTUUID="0004283f" PTTYPE="dos"
 /dev/sda1: LABEL="Untitled" UUID="6251-D213" TYPE="exfat" PARTUUID="971c36c6-01"
+
 pi@raspberrypi:/mnt/jellyfinMedia$ sudo cp /etc/fstab /etc/fstab.back
 pi@raspberrypi:/mnt/jellyfinMedia$ sudo vim /etc/fstab
 pi@raspberrypi:/mnt/jellyfinMedia$ cat /etc/fstab
