@@ -63,6 +63,14 @@ Replace the `*` on the line `/mnt/nfsshare *` above with the IP segment you want
 ### Automount the USB on reboot
 
 ```bash
+pi@raspberrypi:/mnt/nfsshare$ sudo blkid
+/dev/mmcblk0p1: LABEL_FATBOOT="RECOVERY" LABEL="RECOVERY" UUID="5C7F-80DB" TYPE="vfat" PARTUUID="0004283f-01"
+/dev/mmcblk0p5: LABEL="SETTINGS" UUID="8f1c81ed-b0b2-4c82-920a-c814e6c2ae7b" TYPE="ext4" PARTUUID="0004283f-05"
+/dev/mmcblk0p6: LABEL_FATBOOT="boot" LABEL="boot" UUID="024C-430B" TYPE="vfat" PARTUUID="0004283f-06"
+/dev/mmcblk0p7: LABEL="root" UUID="c06fca97-5d2b-41b6-9971-fc45bf639373" TYPE="ext4" PARTUUID="0004283f-07"
+/dev/sda1: UUID="748F97411AA2CB11" TYPE="ntfs" PTTYPE="dos" PARTUUID="971c36c6-01"
+/dev/mmcblk0: PTUUID="0004283f" PTTYPE="dos"
+
 pi@raspberrypi:/mnt/nfsshare$ sudo vim /etc/fstab
 pi@raspberrypi:/mnt/nfsshare$ cat /etc/fstab
 proc            /proc           proc    defaults          0       0
@@ -71,13 +79,6 @@ proc            /proc           proc    defaults          0       0
 UUID=748F97411AA2CB11 /mnt/nfsshare ntfs defaults,auto,users,rw,nofail,umask=000 0 0
 # a swapfile is not a swap partition, no line here
 #   use  dphys-swapfile swap[on|off]  for that
-pi@raspberrypi:/mnt/nfsshare$ sudo blkid
-/dev/mmcblk0p1: LABEL_FATBOOT="RECOVERY" LABEL="RECOVERY" UUID="5C7F-80DB" TYPE="vfat" PARTUUID="0004283f-01"
-/dev/mmcblk0p5: LABEL="SETTINGS" UUID="8f1c81ed-b0b2-4c82-920a-c814e6c2ae7b" TYPE="ext4" PARTUUID="0004283f-05"
-/dev/mmcblk0p6: LABEL_FATBOOT="boot" LABEL="boot" UUID="024C-430B" TYPE="vfat" PARTUUID="0004283f-06"
-/dev/mmcblk0p7: LABEL="root" UUID="c06fca97-5d2b-41b6-9971-fc45bf639373" TYPE="ext4" PARTUUID="0004283f-07"
-/dev/sda1: UUID="748F97411AA2CB11" TYPE="ntfs" PTTYPE="dos" PARTUUID="971c36c6-01"
-/dev/mmcblk0: PTUUID="0004283f" PTTYPE="dos"
 ```
 
 ### Mount the usb manually to start
