@@ -8,8 +8,8 @@ services:
     volumes:
       - jellyfin-config:/config
       - jellyfin-cache:/cache
-      - /mnt/jellyfinMedia:/media
-      - /mnt/jellyfinMedia:/media2:ro
+      - /mnt/nfsshare:/media
+      - /mnt/nfsshare:/media2:ro
     restart: "unless-stopped"
     # Optional - alternative address used for autodiscovery
     # environment:
