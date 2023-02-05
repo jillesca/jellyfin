@@ -10,7 +10,7 @@ services:
       - TZ=Europe/London
     volumes:
       - tr-config:/config
-      - /mnt/nfsshare:/downloads
+      - /mnt/nfsshare/downloads/:/downloads
       - tr-watch:/watch
     ports:
       - 9091:9091
